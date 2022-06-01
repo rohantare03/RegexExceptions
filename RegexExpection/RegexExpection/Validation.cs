@@ -16,6 +16,7 @@ namespace RegexExpection
         public string PassWord1 = ("^[A-Za-z0-9@#$%^&*+]{8,}$");
         public string PassWord2 = ("^[A-Z]{1,}[A-Za-z0-9@#$%^&*+]{7,}$");
         public string PassWord3 = ("^[A-Z]{1,}[A-Za-z0-9@#$%^&*+]{6,}[0-9]{1,}$");
+        public string PassWord4 = ("^[A-Z]{1,}[A-Za-z0-9]{5,}[@#$%^&*+]{1}[0-9]{1,}$");
         public string First_Name(string firstName)
         {    
             try
@@ -31,7 +32,7 @@ namespace RegexExpection
                 }
                 return firstName;
             }
-            catch
+            catch (Exception ex)
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.FIRSTNAME_INVALID, "First name should not be invalid");
             }
@@ -51,7 +52,7 @@ namespace RegexExpection
                 }
                 return lastName;
             }
-            catch
+            catch (Exception ex)
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.LASTNAME_INVALID, "Last name should not be invalid");
             }
@@ -71,7 +72,7 @@ namespace RegexExpection
                 }
                 return Email_Id;
             }
-            catch
+            catch  (Exception ex)
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAIL_INVALID, "Email should not be invalid");
             }
@@ -91,7 +92,7 @@ namespace RegexExpection
                 }
                 return Mobile_Num;
             }
-            catch
+            catch   (Exception ex)
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.MOBILE_INVALID, "Mobile Number should not be invalid");
             }
@@ -111,7 +112,7 @@ namespace RegexExpection
                 }
                 return passWord;
             }
-            catch
+            catch (Exception ex)
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD1_INVALID, "Password1 should not be invalid");
             }
@@ -131,7 +132,7 @@ namespace RegexExpection
                 }
                 return passWord2;
             }
-            catch
+            catch (Exception ex)
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD2_INVALID, "Password2 should not be invalid");
             }
@@ -151,7 +152,27 @@ namespace RegexExpection
                 }
                 return passWord3;
             }
-            catch
+            catch (Exception ex)
+            {
+                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD3_INVALID, "Password3 should not be invalid");
+            }
+        }
+        public string Validate_PassWord4(string passWord4)
+        {
+            try
+            {
+                Regex regex = new Regex(PassWord4);
+                if (regex.IsMatch(passWord4))
+                {
+                    Console.WriteLine("Password is valid :" + passWord4);
+                }
+                else
+                {
+                    Console.WriteLine("Password is invalid");
+                }
+                return passWord4;
+            }
+            catch   (Exception ex)
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD3_INVALID, "Password3 should not be invalid");
             }

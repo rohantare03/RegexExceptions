@@ -138,7 +138,7 @@ namespace RegexTestCases
             }
         }
         //<summary>
-        //uc6: Comparing the Password with minimum one numeric value of user
+        //uc7: Comparing the Password with minimum one numeric value of user
         //</summary>
         [Test]
         public void Comparing_the_Password_With_minimum_one_Numeric_Value_of_User() 
@@ -151,6 +151,27 @@ namespace RegexTestCases
                 //Act
                 validation = new Validation();
                 validation.Validate_PassWord3(passWord3);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
+        //<summary>
+        //uc8: Comparing the Password with exactly one Special character of user
+        //</summary>
+        [Test]
+        public void Comparing_the_Password_With_exactly_one_Special_character_of_User() 
+        {
+            //Arrange
+            string passWord4 = "RohaTare33";
+            string expected = "Password4 should not be invalid";
+            try
+            {
+                //Act
+                validation = new Validation();
+                validation.Validate_PassWord4(passWord4);
             }
             catch (RegexCustomExpection expection)
             {

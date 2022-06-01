@@ -45,7 +45,13 @@
             Console.WriteLine("----------------------------");
             Console.WriteLine("Enter the Password with minimum one numeric value : ");
             string Password3 = Console.ReadLine();
-            validation.Validate_PassWord3(Password3); 
+            validation.Validate_PassWord3(Password3);
+
+            //uc8 : Password with exactly one special character
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Enter the Password with exactly one special character value : ");
+            string Password4 = Console.ReadLine();
+            validation.Validate_PassWord4(Password4);
         }
     }
 }
