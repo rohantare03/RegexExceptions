@@ -74,5 +74,26 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+        //<summary>
+        //uc4 : Comparing the Mobile Number of user
+        //</summary>
+        [Test]
+        public void Comparing_the_Mobile_Number_of_User()
+        {
+            //Arrange
+            string Mobile_Num = "915849921";
+            string expected = "Mobile Number should not be invalid";
+            try
+            {
+                //Act
+                validation = new Validation();
+                validation.EmailId(Mobile_Num);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
     }
 }
