@@ -137,5 +137,26 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+        //<summary>
+        //uc6: Comparing the Password with minimum one numeric value of user
+        //</summary>
+        [Test]
+        public void Comparing_the_Password_With_Minimum_one_Numeric_Value_of_User() 
+        {
+            //Arrange
+            string passWord3 = "RohaTare";
+            string expected = "Password3 should not be invalid";
+            try
+            {
+                //Act
+                validation = new Validation();
+                validation.Validate_PassWord3(passWord3);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
     }
 }
