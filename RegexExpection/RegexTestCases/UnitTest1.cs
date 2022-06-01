@@ -116,5 +116,26 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+        //<summary>
+        //uc6: Comparing the Password with minimum one upper case of user
+        //</summary>
+        [Test]
+        public void Comparing_the_Password_With_Minimum_one_Upper_Case_of_User() 
+        {
+            //Arrange
+            string passWord2 = "rohatare";
+            string expected = "Password2 should not be invalid";
+            try
+            {
+                //Act
+                validation = new Validation();
+                validation.Validate_PassWord2(passWord2);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
     }
 }
