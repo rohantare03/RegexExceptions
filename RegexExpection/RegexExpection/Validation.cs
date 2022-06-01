@@ -13,7 +13,7 @@ namespace RegexExpection
         public string LastName = ("^[A-Z]{1}[A-Za-z]{3,}$");
         public string Email = ("^[A-Za-z0-9]{3,}@[A-Za-z]{3,}.[a-zA-Z]{2,}$");
         public string MobileNum = ("^[0-9]{2}[ ][0-9]{10}$");
-     
+        public string PassWord1 = ("^[A-Za-z0-9@#$%^&*+]{8,}$");
         public string First_Name(string firstName)
         {    
             try
@@ -94,6 +94,25 @@ namespace RegexExpection
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.MOBILE_INVALID, "Mobile Number should not be invalid");
             }
         }
-       
+        public string Validate_PassWord(string passWord)
+        {
+            try
+            {
+                Regex regex = new Regex(PassWord1);
+                if (regex.IsMatch(passWord))
+                {
+                    Console.WriteLine("Password is valid :" + passWord);
+                }
+                else
+                {
+                    Console.WriteLine("Password is invalid");
+                }
+                return passWord;
+            }
+            catch
+            {
+                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD1_INVALID, "Password1 should not be invalid");
+            }
+        }
     }
 }
