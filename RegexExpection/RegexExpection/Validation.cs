@@ -13,6 +13,7 @@ namespace RegexExpection
         public string LastName = ("^[A-Z]{1}[A-Za-z]{3,}$");
         public string Email = ("^[A-Za-z0-9]{3,}@[A-Za-z]{3,}.[a-zA-Z]{2,}$");
         public string MobileNum = ("^[0-9]{2}[ ][0-9]{10}$");
+     
         public string First_Name(string firstName)
         {    
             try
@@ -93,5 +94,6 @@ namespace RegexExpection
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.MOBILE_INVALID, "Mobile Number should not be invalid");
             }
         }
+       
     }
 }

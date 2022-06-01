@@ -87,7 +87,7 @@ namespace RegexTestCases
             {
                 //Act
                 validation = new Validation();
-                validation.EmailId(Mobile_Num);
+                validation.Mobile(Mobile_Num);
             }
             catch (RegexCustomExpection expection)
             {
@@ -95,5 +95,6 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+       
     }
 }
