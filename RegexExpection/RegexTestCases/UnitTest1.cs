@@ -141,7 +141,7 @@ namespace RegexTestCases
         //uc6: Comparing the Password with minimum one numeric value of user
         //</summary>
         [Test]
-        public void Comparing_the_Password_With_Minimum_one_Numeric_Value_of_User() 
+        public void Comparing_the_Password_With_minimum_one_Numeric_Value_of_User() 
         {
             //Arrange
             string passWord3 = "RohaTare";
