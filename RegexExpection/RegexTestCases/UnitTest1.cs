@@ -19,7 +19,7 @@ namespace RegexTestCases
         {
             //Arrange
             string firstName = "rohan";
-            string expected = "First name should be invalid";
+            string expected = "First name should not be invalid";
             try
             {
                 //Act
@@ -40,12 +40,33 @@ namespace RegexTestCases
         {
             //Arrange
             string lastName = "tae";
-            string expected = "Last name should be invalid";
+            string expected = "Last name should not be invalid";
             try
             {
                 //Act
                 validation = new Validation();
                 validation.Last_Name(lastName);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
+        //<summary>
+        //uc3 : Comparing the EmailId of user
+        //</summary>
+        [Test]
+        public void Comparing_the_EmailId_of_User()
+        {
+            //Arrange
+            string Email_Id = "rohantare";
+            string expected = "Email should not be invalid";
+            try
+            {
+                //Act
+                validation = new Validation();
+                validation.EmailId(Email_Id);
             }
             catch (RegexCustomExpection expection)
             {
