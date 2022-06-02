@@ -19,7 +19,7 @@ namespace RegexTestCases
         {
             //Arrange
             string firstName = "rohan";
-            string expected = "First Name should not be invalid";
+            string expected = "First Name is invalid";
             try
             {
                 //Act
