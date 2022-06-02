@@ -17,12 +17,17 @@
             string last_Name = Console.ReadLine();
             validation.Last_Name(last_Name);
 
-
             //uc3 : Email
             Console.WriteLine("----------------------------");
             Console.WriteLine("Enter the Email Id");
             string email_Id = Console.ReadLine();
             validation.EmailId(email_Id);
+
+            //uc4 : Mobile Number
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Enter the Mobile Number");
+            string mobileNum = Console.ReadLine();
+            validation.Mobile(mobileNum);
         }
     }
 }
