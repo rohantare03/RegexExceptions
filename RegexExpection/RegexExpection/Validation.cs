@@ -11,6 +11,7 @@ namespace RegexExpection
     {
         public string FirstName = ("^[A-Z]{1}[A-Za-z]{2,}$");
         public string LastName = ("^[A-Z]{1}[A-Za-z]{2,}$");
+        public string Email = ("^[A-Za-z0-9]{3,}@[A-Za-z]{3,}.[a-zA-Z]{2,}$");
         public string First_Name(string firstName)
         {
             try
@@ -49,6 +50,26 @@ namespace RegexExpection
             catch
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.LASTNAME_INVALID, "Last Name is invalid");
+            }
+        }
+        public string EmailId(string Email_Id)
+        {
+            try
+            {
+                Regex regex = new Regex(Email);
+                if (regex.IsMatch(Email_Id))
+                {
+                    Console.WriteLine("EmailId is valid :" + Email_Id);
+                    return Email_Id;
+                }
+                else
+                {
+                    throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
+                }
+            }
+            catch
+            {
+                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
             }
         }
     }

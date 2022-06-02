@@ -11,7 +11,7 @@ namespace RegexExpection
         Exceptiontype type;
         public enum Exceptiontype
         {
-            FIRSTNAME_INVALID, LASTNAME_INVALID, EMAIL_INVALID, MOBILE_INVALID, PASSWORD1_INVALID, PASSWORD2_INVALID, PASSWORD3_INVALID, PASSWORD4_INVALID
+            FIRSTNAME_INVALID, LASTNAME_INVALID, EMAILID_INVALID, MOBILE_INVALID, PASSWORD1_INVALID, PASSWORD2_INVALID, PASSWORD3_INVALID, PASSWORD4_INVALID
         }
         public RegexCustomExpection(Exceptiontype type, string message) : base(message)
         {
