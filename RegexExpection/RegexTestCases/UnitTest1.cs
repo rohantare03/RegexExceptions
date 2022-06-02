@@ -93,5 +93,25 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+        //<summary>
+        //uc5 : Comparing the password of user
+        //</summary>
+        [Test]
+        public void Comparing_the_Password_of_User()
+        {
+            //Arrange
+            string password = " ";
+            string expected = "Password is invalid";
+            try
+            {
+                //Act                
+                validation.Validate_PassWord(password);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
     }
 }

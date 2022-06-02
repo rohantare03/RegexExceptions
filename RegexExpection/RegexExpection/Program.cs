@@ -28,6 +28,12 @@
             Console.WriteLine("Enter the Mobile Number");
             string mobileNum = Console.ReadLine();
             validation.Mobile(mobileNum);
+
+            //uc5 : Password
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Enter the Password");
+            string Password = Console.ReadLine();
+            validation.Validate_PassWord(Password);
         }
     }
 }
