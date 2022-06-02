@@ -152,5 +152,24 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+        //<summary>
+        //uc8 : Comparing the password of user with exactly one special character
+        //</summary>
+        [Test]
+        public void Comparing_the_Password_of_User_exactly_one_Special_Character()
+        {
+            string password4 = "RohanTare99";
+            string expected = "Password is invalid";
+            try
+            {
+                //Act
+                validation.Validate_PassWord4(password4);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
     }
 }

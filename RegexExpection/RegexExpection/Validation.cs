@@ -16,6 +16,7 @@ namespace RegexExpection
         public string PassWord = ("^[A-Za-z0-9@#$%^&*+]{8,}$");
         public string PassWord2 = ("^[A-Z]{1,}[A-Za-z0-9@#$%^&*+]{7,}$");
         public string PassWord3 = ("^[A-Z]{1,}[A-Za-z0-9@#$%^&*+]{6,}[0-9]{1,}$");
+        public string PassWord4 = ("^[A-Z]{1,}[A-Za-z0-9]{5,}[@#$%^&*+]{1}[0-9]{1,}$");
         public string First_Name(string firstName)
         {
             try
@@ -145,6 +146,26 @@ namespace RegexExpection
                 {
                     Console.WriteLine("Password is valid :" + passWord3);
                     return passWord3;
+                }
+                else
+                {
+                    throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
+                }
+            }
+            catch
+            {
+                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
+            }
+        }
+        public string Validate_PassWord4(string passWord4)
+        {
+            try
+            {
+                Regex regex = new Regex(PassWord4);
+                if (regex.IsMatch(passWord4))
+                {
+                    Console.WriteLine("Password is valid :" + passWord4);
+                    return passWord4;
                 }
                 else
                 {
