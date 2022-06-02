@@ -171,5 +171,24 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+        //<summary>
+        //uc9 : Comparing the Emails of all the given sample Emails
+        //</summary>
+        [Test]
+        public void Comparing_the_Emails_of_all_the_given_Sample_Emails()
+        {
+            string allemail = " ";
+            string expected = "Email is invalid";
+            try
+            {
+                //Act
+                validation.Validate_AllEmails(allemail);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
     }
 }

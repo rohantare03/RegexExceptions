@@ -17,6 +17,7 @@ namespace RegexExpection
         public string PassWord2 = ("^[A-Z]{1,}[A-Za-z0-9@#$%^&*+]{7,}$");
         public string PassWord3 = ("^[A-Z]{1,}[A-Za-z0-9@#$%^&*+]{6,}[0-9]{1,}$");
         public string PassWord4 = ("^[A-Z]{1,}[A-Za-z0-9]{5,}[@#$%^&*+]{1}[0-9]{1,}$");
+        public string AllEmails = ("^[A-Za-z0-9]+([.+_-]?[A-Za-z0-9])*@[A-Za-z0-9]+.([c]{1}[o]{1}[m]{1})*([n]{1}[e]{1}[t]{1})*[,]*([.][a]{1}[u]{1})*([.][c]{1}[o]{1}[m]{1})*$");
         public string First_Name(string firstName)
         {
             try
@@ -175,6 +176,26 @@ namespace RegexExpection
             catch
             {
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
+            }
+        }
+        public string Validate_AllEmails(string All_Email)
+        {
+            try
+            {
+                Regex regex = new Regex(AllEmails);
+                if (regex.IsMatch(All_Email))
+                {
+                    Console.WriteLine("Email is valid :" + All_Email);
+                    return All_Email;
+                }
+                else
+                {
+                    throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
+                }
+            }
+            catch
+            {
+                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
             }
         }
     }

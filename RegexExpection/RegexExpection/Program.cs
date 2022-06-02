@@ -52,6 +52,12 @@
             Console.WriteLine("Enter the Password with exactly one special character : ");
             string Password4 = Console.ReadLine();
             validation.Validate_PassWord(Password4);
+
+            //uc9 : AllEmails
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Enter the Email");
+            string all_Email = Console.ReadLine();
+            validation.Validate_AllEmails(all_Email);
         }
     }
 }
